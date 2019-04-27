@@ -15,5 +15,6 @@ Pour comprendre, regardez ma vidéo sur YouTube
 3. Dans ce dossier, créez en un autre, appelez le "Files", c'est ici que seront stockés les fichiers txt pour OBS
 4. Ouvrez un invité de commande (pas en tant qu'administrateur) et tapez sans les guillemets "cd C:\OBSmusic"
 5. Tapez "npm install ws" (pour installer la librairie du WebSocket)
+6. Tapez "npm install request" (pour installer la librairie request pour télécharger la cover)
 6. Téléchargez les fichiers tous les fichiers du github
 7. Lancez le "start.bat" (Vous pouvez créer un raccourci sur le bureau bien entendu) et une musique sur Chrome
