@@ -1,0 +1,15 @@
+{
+  "name": "obsmusic",
+  "version": "1.0.0",
+  "description": "A simple nodejs project to retreive music information from Chrome or FireFox extension",
+  "main": "script.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "author": "GENERATION2GEEK",
+  "license": "ISC",
+  "dependencies": {
+    "websocket": "^1.0.28",
+    "ws": "^6.2.1"
+  }
+}
