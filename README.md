@@ -10,10 +10,10 @@ Pour comprendre, regardez ma vidéo sur YouTube
 
 # Installation
 
-Pour commencer, télécharger et installez [NodeJS](https://nodejs.org/en/download/)
-Créez un dossier à la racine de votre disque dur, appelez le "OBSmusic" (c'est mieux car j'utilise ce nom tout au long du tuto) dans C:\
-Dans ce dossier, créez en un autre, appelez le "Files", c'est ici que seront stockés les fichiers txt pour OBS
-Ouvrez un invité de commande (pas en tant qu'administrateur) et tapez sans les guillemets "cd C:\OBSmusic"
-Tapez "npm install ws" (pour installer la librairie du WebSocket)
-Téléchargez les fichiers tous les fichiers du github
-Lancez le "start.bat" (Vous pouvez créer un raccourci sur le bureau bien entendu)
+1. Pour commencer, télécharger et installez [NodeJS](https://nodejs.org/en/download/)
+2. Créez un dossier à la racine de votre disque dur, appelez le "OBSmusic" (c'est mieux car j'utilise ce nom tout au long du tuto) dans C:\
+3. Dans ce dossier, créez en un autre, appelez le "Files", c'est ici que seront stockés les fichiers txt pour OBS
+4. Ouvrez un invité de commande (pas en tant qu'administrateur) et tapez sans les guillemets "cd C:\OBSmusic"
+5. Tapez "npm install ws" (pour installer la librairie du WebSocket)
+6. Téléchargez les fichiers tous les fichiers du github
+7. Lancez le "start.bat" (Vous pouvez créer un raccourci sur le bureau bien entendu)
