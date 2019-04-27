@@ -2,6 +2,7 @@
 
 const WebSocket = require('ws');
 const fs = require('fs');
+const request = require('request');
 
 
 
@@ -26,6 +27,15 @@ wss.on('connection', function connection(ws) {
   ws.send('Version:0.4.0.0');
   connected = true
   console.log("Extension connectée")
+
+  var download = function(uri, filename, callback){
+  request.head(uri, function(err, res, body){
+    console.log('content-type:', res.headers['content-type']);
+    console.log('content-length:', res.headers['content-length']);
+
+    request(uri).pipe(fs.createWriteStream(filename)).on('close', callback);
+    });
+  };
 
 
   ws.on('message', function incoming(data) {
@@ -59,7 +69,10 @@ wss.on('connection', function connection(ws) {
    if (content[0].includes("COVER")) {
       // var coversp = data.split(":");
       musiccover = content[1] + ":" + content[2];
-    console.log("Cover : " + musiccover)
+    
+    download(musiccover, 'Files/musiccover.jpg', function(){
+     console.log("Cover : " + musiccover + " | Cover téléchargée")
+    });
    }
    if (content[0].includes("STATE")) {
     musicstate = content[1];
@@ -81,7 +94,6 @@ if (connected) {
     fs.writeFile("Files/musicalbum.txt", musicalbum, function(err) {});
   }
 	
-  fs.writeFile("Files/musiccover.txt", musiccover, function(err) {});
   fs.writeFile("Files/musicduration.txt", musicduration, function(err) {});
   fs.writeFile("Files/musicposition.txt", musicposition, function(err) {}); 
 	
