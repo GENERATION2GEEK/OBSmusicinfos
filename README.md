@@ -1,5 +1,5 @@
 # OBS Music Infos
-OBS Music Infos est un petit script en NodeJS pour afficher les informations d'une musique à partir de toutes les plateformes gérées par l'extension Chrome/FireFox WebNowPlaying Companion : [](https://github.com/tjhrulz/WebNowPlaying-BrowserExtension)
+OBS Music Infos est un petit script en NodeJS pour afficher les informations d'une musique à partir de toutes les plateformes gérées par l'extension Chrome/FireFox WebNowPlaying Companion : [Lien](https://github.com/tjhrulz/WebNowPlaying-BrowserExtension)
 
 Pour comprendre, regardez ma vidéo sur YouTube
 
