@@ -8,11 +8,11 @@ const request = require('request');
 
 const wss = new WebSocket.Server({ port: 8974 });
 
-var musictitle;
-var musicartist;
+var musictitle = "";
+var musicartist = "";
 var musicstate;
-var musicalbum;
-var musiccover;
+var musicalbum = "";
+var musiccover = "";
 var musicduration;
 var musicposition;
 var connected = false
