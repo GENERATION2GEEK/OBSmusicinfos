@@ -28,15 +28,6 @@ wss.on('connection', function connection(ws) {
   connected = true
   console.log("Extension connectée")
 
-  var download = function(uri, filename, callback){
-  request.head(uri, function(err, res, body){
-    console.log('content-type:', res.headers['content-type']);
-    console.log('content-length:', res.headers['content-length']);
-
-    request(uri).pipe(fs.createWriteStream(filename)).on('close', callback);
-    });
-  };
-
 
   ws.on('message', function incoming(data) {
 	ws.send(data)
@@ -66,14 +57,6 @@ wss.on('connection', function connection(ws) {
     musicalbum = content[1];
     console.log("Album : " + musicalbum)
    }
-   if (content[0].includes("COVER")) {
-      // var coversp = data.split(":");
-      musiccover = content[1] + ":" + content[2];
-    
-    download(musiccover, 'Files/musiccover.jpg', function(){
-     console.log("Cover : " + musiccover + " | Cover téléchargée")
-    });
-   }
    if (content[0].includes("STATE")) {
     musicstate = content[1];
     if (musicstate == 1) { console.log("La musique est en cours de lecture") } else { console.log("La musique est sur pause") }
@@ -85,7 +68,12 @@ setTimeout(function() {
 if (connected) {
 	fs.writeFile("Files/musictitle.txt", musictitle, function(err) {});
   if (displayartistandalbum) {
+  	if (musicalbum == musicartist || musicalbum == musictitle) {
+  		towrite = musicartist
+  	}
+  	else {
       towrite = musicartist + " - " + musicalbum
+  	}
       fs.writeFile("Files/musicartist.txt", towrite, function(err) {});
       fs.writeFile("Files/musicalbum.txt", musicalbum, function(err) {});
   }
@@ -98,7 +86,7 @@ if (connected) {
   fs.writeFile("Files/musicposition.txt", musicposition, function(err) {}); 
 	
   }
-}, 1000);
+}, 100);
 
 });
 
